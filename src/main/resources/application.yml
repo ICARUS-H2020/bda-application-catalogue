@@ -1,0 +1,43 @@
+spring:
+    datasource:
+        driverClassName: org.postgresql.Driver
+        url: #jdbc:postgresql://<postgresHost:postgresPort>/<dbName>
+        username: #<user>
+        password: #<password>
+    banner:
+      location: classpath:/banner.txt
+    jpa:
+      show-sql: false
+      database: POSTGRESQL
+      generate-ddl: true
+      properties:
+
+        hibernate:
+          dialect: org.hibernate.dialect.PostgreSQLDialect
+          jdbc:
+            lob:
+              non_contextual_creation: true
+      hibernate:
+        ddl-auto: update
+server:
+    port: 8091
+
+general:
+    redis:
+      url: localhost
+      port: 6379
+    catalog-name-default: alida
+
+keys-configuration-server:
+    initFramework: it.eng.alidalab.bdacatalogues.framework.init
+    initCatalogues: it.eng.alidalab.bdacatalogues.catalogues.init
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: INFO
+        type:
+          descriptor:
+            sql:
+              BasicBinder: INFO

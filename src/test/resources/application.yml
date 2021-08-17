@@ -1,0 +1,31 @@
+spring:
+  jpa:
+    properties:
+      hibernate:
+        show_sql: false
+        use_sql_comments: false
+        format_sql: false
+  datasource:
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:db;DATABASE_TO_UPPER=false;DB_CLOSE_DELAY=-1
+    username: test
+    password: test
+  h2:
+    console:
+      enabled: true
+      path: /console
+  redis:
+    host: localhost
+    port: 6371
+server:
+  port: 8091
+general:
+  redis:
+    url: localhost
+    port: 6371
+  catalog-name-default: alida
+
+keys-configuration-server:
+  initFramework: it.eng.alidalab.bdacatalogues.framework.init
+  initCatalogues: it.eng.alidalab.bdacatalogues.catalogues.init
+
